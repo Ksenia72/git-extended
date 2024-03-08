@@ -1,0 +1,527 @@
+* {
+	margin:0px;
+	padding:0px;
+}
+html, body
+{
+    height:100%;
+    width:100%;
+    background-color:#ffffff;
+    color:#000000;
+    font-weight:normal;
+    font-family:"Segoe UI" , "Segoe" , "SegoeUI-Regular-final", Tahoma, Helvetica, Arial, sans-serif;
+    min-width:500px;
+    -ms-overflow-style:-ms-autohiding-scrollbar;
+}
+
+body
+{
+    font-size:0.9em;
+}
+
+#noScript { margin:16px; color:Black; }
+
+:lang(en-GB){quotes:'\2018' '\2019' '\201C' '\201D';}
+:lang(zh){font-family:å¾®è½¯é›…é»‘;}
+
+@-ms-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@-webkit-viewport { width: device-width;  }
+@viewport { width: device-width; }
+
+/* Theme layout styles */
+
+#fullPage, #brandingWrapper
+{
+    width:100%;
+    height:100%;
+    background-color:inherit;
+}
+#brandingWrapper
+{
+    background-color:#4488dd;
+}
+#branding
+{       
+    /* A background image will be added to the #branding element at run-time once the illustration image is configured in the theme. 
+       Recommended image dimensions: 1420x1200 pixels, JPG or PNG, 200 kB average, 500 kB maximum. */
+    height:100%;
+    margin-right:500px; margin-left:0px;
+    background-color:inherit;
+    background-repeat: no-repeat;
+    background-size:cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+#contentWrapper
+{
+    position:relative;
+    width:500px;    
+    height:100%;
+    overflow:auto;
+    background-color:#ffffff; /* for IE7 */
+    margin-left:-500px; margin-right:0px; 
+}
+#content
+{
+    min-height:100%;
+    height: auto !important;
+    margin:0 auto -55px auto;
+    padding:0px 150px 0px 50px;
+}
+#header
+{
+    font-size:2em;
+    font-weight:lighter;
+    font-family:"Segoe UI Light" , "Segoe" , "SegoeUI-Light-final", Tahoma, Helvetica, Arial, sans-serif;
+    padding-top: 90px;
+    margin-bottom:60px;
+    min-height:100px;
+    overflow:hidden;
+}
+#header img
+{
+    /* Logo image recommended dimension: 60x60 (square) or 350X35 (elongated), 4 kB average, 10 kB maximum. Transparent PNG strongly recommended. */
+    width:auto;
+    height:auto;
+    max-width:100%;
+}
+#workArea, #header
+{
+    word-wrap:break-word;
+    width:350px;
+}
+#workArea
+{
+    margin-bottom:90px;
+}
+#footerPlaceholder
+{
+    height:40px;
+}
+#footer
+{
+    height:40px;
+    padding:10px 50px 0px 50px;
+    position:relative;
+    color:#666666;
+    font-size:0.78em;
+}
+#footerLinks
+{
+    float:none;
+    padding-top:10px;
+}
+#copyright {color:#696969;}
+.pageLink { color:#000000; padding-left:16px; }
+
+/* Common content styles */
+
+.clear {clear:both;}
+.float { float:left; } 
+.floatReverse { float:right; } 
+.indent { margin-left:16px; } 
+.indentNonCollapsible { padding-left:16px; }
+.hidden {display:none;}
+.notHidden {display:inherit;}
+.error { color:#e81123; }
+.actionLink { margin-bottom:8px; display:block; }
+a
+{
+    color:#0067b8;
+    text-decoration:none;
+    background-color:transparent;
+}
+ul { list-style-type: disc; }
+ul,ol,dd { padding: 0 0 0 16px; }
+h1,h2,h3,h4,h5,label { margin-bottom: 8px; }
+.submitMargin { margin-top:38px; margin-bottom:30px; }
+.topFieldMargin { margin-top:8px; }
+.fieldMargin { margin-bottom:8px; }
+.groupMargin { margin-bottom:30px; } 
+.sectionMargin { margin-bottom:64px; }
+.block { display: block; }
+.autoWidth { width:auto; }
+.fullWidth { width:342px; }
+.fullWidthIndent { width:326px; }
+.smallTopSpacing { margin-top:15px; }
+.mediumTopSpacing { margin-top:25px; }
+.largeTopSpacing { margin-top:35px; }
+.smallBottomSpacing { margin-bottom:5px; }
+.mediumBottomSpacing { margin-bottom:15px; }
+.largeBottomSpacing  { margin-bottom:25px; }
+input
+{
+    max-width:100%; 
+    font-family:inherit;
+    margin-bottom:8px;
+}
+input[type="radio"], input[type="checkbox"] {
+    vertical-align:middle;
+    margin-bottom: 0px;
+}
+span.submit, input[type="submit"]
+{
+    border:none;
+    background-color:#0067b8; 
+    min-width:80px;
+    width:auto;
+    height:30px;
+    padding:4px 20px 6px 20px;
+    border-style:solid;
+    border-width:1px;
+    transition:background 0s;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    margin-bottom:8px;
+    
+    -ms-user-select:none;
+    -moz-transition:background 0s;
+    -webkit-transition:background 0s;
+    -o-transition:background 0s;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select:none;
+}
+input[type="submit"]:hover,span.submit:hover
+{
+    background: rgb(212, 227, 251);
+}
+
+input[type="submit"]:disabled,span.submit:disabled
+{
+    background: rgb(212, 227, 251);
+    cursor: default;
+}
+
+input[type="submit"]:hover:disabled,span.submit:hover:disabled
+{
+    background: rgb(212, 227, 251);
+    cursor: default;
+}
+
+input.text{
+    height:28px;
+    padding:0px 3px 0px 3px ;
+    border:solid 1px #BABABA;
+    font-size:1.0em;
+}
+input.text:focus
+{
+  border: 1px solid #6B6B6B;
+}
+select
+{
+    height:28px;
+    min-width:60px;
+    max-width:100%; 
+    margin-bottom:8px;
+
+    white-space:nowrap;
+    overflow:hidden;
+    box-shadow:none;
+    padding:2px;
+    font-family:inherit;
+}
+h1, .giantText
+{
+   font-size:2.0em; 
+   font-weight:lighter;
+}          
+h2, .bigText
+{
+   font-size:1.33em;
+   font-weight:lighter;
+}
+h3, .normalText
+{
+    font-size:1.0em;
+    font-weight:normal;
+}
+h4, .smallText
+{
+    font-size:0.9em;
+    font-weight:normal;
+}
+h5, .tinyText
+{
+    font-size:0.8em;
+    font-weight:normal;
+}
+.hint
+{
+    color:#999999;
+}
+.emphasis
+{
+    font-weight:700;
+    color:#2F2F2F;
+} 
+.smallIcon
+{
+    height:20px;
+    padding-right:12px;
+    vertical-align:middle;
+}
+.largeIcon
+{
+    height:48px;
+    /* width:48px; */
+    vertical-align:middle;
+}
+.largeTextNoWrap
+{
+    height:48px;
+    display:table-cell; /* needed when in float*/
+    vertical-align:middle;
+    white-space:nowrap;
+    font-size:1.2em;
+}
+.idp
+{
+    height:48px;
+    clear:both;
+    padding:8px;
+    overflow:hidden;
+}
+.idp:hover 
+{
+    background-color:#cccccc;
+}
+.idpDescription
+{
+    width:80%;
+}
+
+/* Form factor: intermediate height layout. Reduce space of the header. */
+@media only screen and (max-height: 820px) {
+    #header {
+        padding-top: 40px;
+        min-height:0px;
+        overflow: hidden;
+    }
+
+    #workArea
+    {
+        margin-bottom:60px; 
+    }
+}
+
+/* Form factor: intermediate height layout. Reduce space of the header. */
+@media only screen and (max-height: 500px) {
+    #header {
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+    #workArea{
+        margin-bottom:40px; 
+    }
+}
+
+/* Form factor: intermediate layout (WAB in non-snapped view falls in here) */
+@media only screen and (max-width: 600px) {
+    html, body {
+        min-width: 260px;
+    }
+
+    #brandingWrapper {
+        display: none;
+    }
+
+    #contentWrapper {
+        float: none;
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    #content, #footer, #header {
+        width: 400px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #workArea {
+        width: 100%;
+    }
+
+    .fullWidth {
+        width: 392px;
+    }
+
+    .fullWidthIndent {
+        width: 376px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    body {
+        font-size: 0.8em;
+    }
+
+    #content, #footer {
+        width:auto;
+        margin-right:33px;
+        margin-left:25px;
+    }
+
+    #header {
+        width: auto;
+    }
+
+    span.submit, input[type="submit"] {
+        font-size: 0.9em;
+    }
+
+    .fullWidth
+    {
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .fullWidthIndent {
+        width: 85%;
+    }
+
+    .idpDescription
+    {
+        width:70%;
+    }
+}
+
+/* Form factor: snapped WAB (for WAB to work in snapped view, the content wrapper width has to be set to 260px) */
+@media only screen and (max-width:280px)
+{
+    #contentWrapper
+    {
+        width:260px;
+    }
+    .idpDescription
+    {
+        max-width:160px;
+        min-width:100px;
+    }
+}
+
+/* Targets displays using any of Windowsâ€™ High Contrast Mode themes: */
+@media screen and (-ms-high-contrast: active) {
+    textarea::-webkit-input-placeholder {
+        color: #00FF00;
+    }
+
+    textarea:-moz-placeholder { /* Firefox 18- */
+        color: #00FF00;
+    }
+
+    textarea::-moz-placeholder { /* Firefox 19+ */
+        color: #00FF00;
+    }
+
+    textarea:-ms-input-placeholder {
+        color: #00FF00;
+    }
+}
+
+/* Targets displays using the Windowsâ€™ "High Contrast Black" theme: */
+@media screen and (-ms-high-contrast: white-on-black) {
+    #contentWrapper {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    .idp:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    #brandingWrapper {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    html, body {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    textarea::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    textarea:-moz-placeholder { /* Firefox 18- */
+        color: #ffffff;
+    }
+
+    textarea::-moz-placeholder { /* Firefox 19+ */
+        color: #ffffff;
+    }
+
+    textarea:-ms-input-placeholder {
+        color: #ffffff;
+    }
+}
+
+/* Targets displays using the Windowsâ€™ "High Contrast White" theme: */
+@media screen and (-ms-high-contrast: black-on-white) {
+    #contentWrapper {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .idp:hover {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    #brandingWrapper {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    html, body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    textarea::-webkit-input-placeholder {
+        color: #000000;
+    }
+
+    textarea:-moz-placeholder { /* Firefox 18- */
+        color: #000000;
+    }
+
+    textarea::-moz-placeholder { /* Firefox 19+ */
+        color: #000000;
+    }
+
+    textarea:-ms-input-placeholder {
+        color: #000000;
+    }
+}œpÓ²Ô      eâùïeâùïFŸWkf
+†ï   ™    O^partitionKey=%28https%2Cpfur.ru%29,:https://adfs4.pfur.ru/adfs/portal/css/style.css?id=3B1A0C704CDAE8ECD48AA8F0D50409D981CEF21D7AE6DC85B0797D270101B151 necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Content-Length: 10462
+Content-Type: text/css
+Expires: Mon, 01 Apr 2024 10:05:35 GMT
+ETag: 3B1A0C704CDAE8ECD48AA8F0D50409D981CEF21D7AE6DC85B0797D270101B151
+Server: Microsoft-HTTPAPI/2.0
+Strict-Transport-Security: max-age = 31536000
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:;
+Date: Sat, 02 Mar 2024 10:05:35 GMT
+ original-response-headers Content-Length: 10462
+Content-Type: text/css
+Expires: Mon, 01 Apr 2024 10:05:35 GMT
+ETag: 3B1A0C704CDAE8ECD48AA8F0D50409D981CEF21D7AE6DC85B0797D270101B151
+Server: Microsoft-HTTPAPI/2.0
+Strict-Transport-Security: max-age = 31536000
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:;
+Date: Sat, 02 Mar 2024 10:05:35 GMT
+ ctid 5 uncompressed-len 0 net-response-time-onstart 274 net-response-time-onstop 293   (Þ

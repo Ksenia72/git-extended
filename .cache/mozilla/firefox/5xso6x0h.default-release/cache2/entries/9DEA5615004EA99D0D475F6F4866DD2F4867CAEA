@@ -1,0 +1,555 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>elegos/gitflow
+ Copr</title>
+  <link rel="stylesheet" href="/system_static/jquery-ui/jquery-ui.min.css" />
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+  <link href="/system_static/patternfly/css/patternfly.min.css" rel="stylesheet" media="screen, print">
+  <link rel="stylesheet" href="/system_static/patternfly/css/patternfly-additions.min.css">
+  <link href="/static/css/custom-styles.css" rel="stylesheet" media="screen, print">
+  <script src="/system_static/jquery/3/jquery.min.js"></script>
+  <script src="/system_static/jquery-ui/jquery-ui.min.js"></script>
+  <script src="/system_static/bootstrap_scss/js/bootstrap.min.js"></script>
+  <script src="/system_static/datatables/js/jquery.dataTables.min.js"></script>
+  <script src="/system_static/patternfly/js/patternfly.min.js"></script>
+
+  <script src="/static/copr.js"></script>
+  <link rel=stylesheet type=text/css href="/static/copr.css">
+  <link rel=stylesheet type=text/css href="/static/css/style-overwrite.css">
+  <link rel=stylesheet type=text/css href="/static/css/copr-flavor.css">
+</head>
+
+<body>
+  <!-- BANNER -->
+
+  <!-- MAIN MENU -->
+  <nav class="" id="main-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-7 col-xs-6">
+          <a href="/coprs/">
+            <img id="logo" src="/static/copr_logo.png" alt="Copr Build System">
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-5 col-xs-6">
+          <div id="login-menu" class="text-right">
+
+          <a href="/login/">log in</a>
+|          <a href="/api_3/gssapi_login/web-ui/">gssapi-login</a>
+|          <a href="https://accounts.fedoraproject.org">sign up</a>
+
+          </div>
+          <form role="search" method="get" id="1"
+      action="/coprs/fulltext/">
+  <div class="input-group  menu-search">
+    <input name="fulltext" type="text" class="form-control"
+           placeholder="Search projects by name, os or arch"
+           value="">
+
+    <div class="input-group-btn">
+      <button type="submit" class="btn btn-default">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+
+      <button type="button" class="btn btn-default dropdown-toggle"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+
+      <ul class="dropdown-menu">
+        <li>
+          <a id="search-username" onClick="search_by_attribute('ownername', 1)" href="#">
+            Search by user name
+          </a>
+        </li>
+
+        <li>
+          <a id="search-groupname" onClick="search_by_attribute('ownername', 1)" href="#">
+            Search by group name
+          </a>
+        </li>
+        <li role="separator" class="divider"></li>
+
+        <li>
+          <a id="search-projectname" onClick="search_by_attribute('projectname', 1)" href="#">
+            Search by project name
+          </a>
+        </li>
+
+        <li>
+          <a id="search-packagename" onClick="search_by_attribute('packagename', 1)" href="#">
+            Search by package name
+          </a>
+        </li>
+        <li role="separator" class="divider"></li>
+
+        <li>
+          <a href="https://docs.pagure.org/copr.copr/user_documentation.html#advanced-searching">
+            Searching documentation
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="breadcrumb-panel">
+    <div class="container">
+<ol class="breadcrumb">
+  <li  >
+  <a href="/coprs/">
+    Home
+  </a>
+</li>
+
+    <li  >
+  <a href="/coprs/elegos/">
+    elegos
+  </a>
+</li>
+
+  <li  >
+  <a href="/coprs/elegos/gitflow/">
+    gitflow
+  </a>
+</li>
+
+
+<li class="active">
+  Overview
+</li>
+</ol>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div id=content>
+    <div class="container">
+
+      <!-- Flash messages -->
+
+
+
+      <!-- the actual content -->
+
+
+
+<div class="clearfix">
+  <!-- Upvote or downvote the project -->
+  
+
+<div id="project-score" class="pull-left">
+  <form action="/coprs/elegos/gitflow/" method="POST">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="">
+        <button name="upvote" type="submit" value="upvote">
+          <i class="fa fa-chevron-up fa-lg"></i>
+        </button>
+      </li>
+      <li role="presentation">
+        <span class="text-lg text-default" title="0 upvotes and 0 downvotes">
+          0
+        </span>
+      </li>
+      <li role="presentation" class="">
+        <button name="downvote" type="submit" value="downvote">
+          <i class="fa fa-chevron-down fa-lg"></i>
+        </button>
+      </li>
+    </ul>
+  </form>
+</div>
+
+
+  <!-- PROJECT NAME -->
+  <div style="margin-bottom:22px;margin-top:22px">
+    <h1 class="project-name" style="display:inline;">
+  <a href="/coprs/elegos/">elegos</a><!--
+  --><span class="padding"></span>/<span class="padding"></span><!--
+  --><strong><a href="/coprs/elegos/gitflow/">gitflow</a></strong>
+</h1>
+    <p class="text-muted">Project ID: 36224</p>
+  </div>
+
+
+</div>
+
+
+<!-- MENU -->
+<ul class="nav nav-tabs">
+
+      <li class="active">
+    <a href="/coprs/elegos/gitflow/"> <span class="fa fa-home"></span>&nbsp;      Overview
+    </a>
+  </li>
+
+      <li class="">
+    <a href="/coprs/elegos/gitflow/packages/"> <span class="fa fa-archive"></span>&nbsp;      Packages
+    </a>
+  </li>
+
+      <li class="">
+    <a href="/coprs/elegos/gitflow/builds/"> <span class="fa fa-tasks"></span>&nbsp;      Builds
+    </a>
+  </li>
+
+      <li class="">
+    <a href="/coprs/elegos/gitflow/modules/"> <span class="fa fa-rocket"></span>&nbsp;      Modules
+    </a>
+  </li>
+
+      <li class="">
+    <a href="/coprs/elegos/gitflow/monitor/"> <span class="fa fa-desktop"></span>&nbsp;      Monitor
+    </a>
+  </li>
+
+
+</ul>
+
+<div class="row">
+  <div class="col-sm-8 col-md-9">
+    <h3>Description</h3>
+    <p>Description not filled in by author.
+             Very likely personal repository for testing purpose,
+             which you should not use.
+    </p>
+
+
+    <h3>Installation Instructions</h3>
+    <p><pre><code class="language-bash"><div class="highlight"><span></span><span class="c1"># Enable the copr repository</span>
+$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>copr<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>elegos/gitflow
+<span class="c1"># Install gitflow</span>
+$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>gitflow
+</div>
+</code></pre>
+<p>Bugs: <a href="https://github.com/petervanderdoes/gitflow-avh">https://github.com/petervanderdoes/gitflow-avh</a></p>
+
+    </p>
+
+    <h3>Active Releases</h3>
+    <p>
+        The following unofficial repositories are provided as-is
+        by owner of this project.
+        Contact the owner directly for bugs or issues (IE: not bugzilla).
+    </p>
+
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Release</th>
+          <th>Architectures</th>
+          <th>Repo Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+                  <img style="height:1.8em" src="/static/chroot_logodir/fedora.png" />
+
+                Fedora 37
+
+          </td>
+          <td>
+              aarch64
+              <small class="text-muted"> (8)*</small>,               x86_64
+              <small class="text-muted"> (627)*</small>          </td>
+          <td class="rightmost">
+            <a class="btn btn-default btn-margin" href="https://copr.fedorainfracloud.org/coprs/elegos/gitflow/repo/fedora-37/elegos-gitflow-fedora-37.repo">
+              <span class="pficon pficon-save"></span>     Fedora 37
+
+            </a>
+            <small class="text-muted"> (0 downloads) </small>
+            <span class="pull-right">
+              <i class="fa fa-trash-o fa-2x" aria-hidden="true" title="The chroots aarch64 and x86_64 are EOL and will remain available for another 92 days"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                  <img style="height:1.8em" src="/static/chroot_logodir/fedora.png" />
+
+                Fedora 38
+
+          </td>
+          <td>
+              aarch64
+              <small class="text-muted"> (10)*</small>,               x86_64
+              <small class="text-muted"> (573)*</small>          </td>
+          <td class="rightmost">
+            <a class="btn btn-default btn-margin" href="https://copr.fedorainfracloud.org/coprs/elegos/gitflow/repo/fedora-38/elegos-gitflow-fedora-38.repo">
+              <span class="pficon pficon-save"></span>     Fedora 38
+
+            </a>
+            <small class="text-muted"> (495 downloads) </small>
+            <span class="pull-right">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                  <img style="height:1.8em" src="/static/chroot_logodir/fedora.png" />
+
+                Fedora 39
+
+          </td>
+          <td>
+              aarch64
+              <small class="text-muted"> (6)*</small>,               x86_64
+              <small class="text-muted"> (351)*</small>          </td>
+          <td class="rightmost">
+            <a class="btn btn-default btn-margin" href="https://copr.fedorainfracloud.org/coprs/elegos/gitflow/repo/fedora-39/elegos-gitflow-fedora-39.repo">
+              <span class="pficon pficon-save"></span>     Fedora 39
+
+            </a>
+            <small class="text-muted"> (350 downloads) </small>
+            <span class="pull-right">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                  <img style="height:1.8em" src="/static/chroot_logodir/fedora.png" />
+
+                Fedora 40
+
+          </td>
+          <td>
+              aarch64
+              <small class="text-muted"> (0)*</small>,               x86_64
+              <small class="text-muted"> (0)*</small>          </td>
+          <td class="rightmost">
+            <a class="btn btn-default btn-margin" href="https://copr.fedorainfracloud.org/coprs/elegos/gitflow/repo/fedora-40/elegos-gitflow-fedora-40.repo">
+              <span class="pficon pficon-save"></span>     Fedora 40
+
+            </a>
+            <small class="text-muted"> (2 downloads) </small>
+            <span class="pull-right">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                  <img style="height:1.8em" src="/static/chroot_logodir/fedora.png" />
+
+                Fedora rawhide
+
+          </td>
+          <td>
+              aarch64
+              <small class="text-muted"> (9)*</small>,               x86_64
+              <small class="text-muted"> (17)*</small>          </td>
+          <td class="rightmost">
+            <a class="btn btn-default btn-margin" href="https://copr.fedorainfracloud.org/coprs/elegos/gitflow/repo/fedora-rawhide/elegos-gitflow-fedora-rawhide.repo">
+              <span class="pficon pficon-save"></span>     Fedora rawhide
+
+            </a>
+            <small class="text-muted"> (90 downloads) </small>
+            <span class="pull-right">
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-muted"><small> * Total number of packages downloaded in the last seven days.</small></p>
+
+
+
+
+
+
+    <div id='discourse-comments'></div>
+
+    <script type="text/javascript">
+      DiscourseEmbed = { discourseUrl: 'https://discussion.fedoraproject.org/',
+                         discourseEmbedUrl: 'https://copr.fedorainfracloud.org/coprs/elegos/gitflow/' };
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+        d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+      })();
+    </script>
+
+  </div>
+  <div class="col-sm-4 col-md-3">
+    <br>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <a class="btn btn-default" href="https://github.com/elegos/fedora-gitflow" title="https://github.com/elegos/fedora-gitflow">
+            <span class="fa fa-home"></span> Homepage
+          </a>
+
+          <a class="btn btn-default" href="https://github.com/elegos/fedora-gitflow/issues" title="https://github.com/elegos/fedora-gitflow/issues">
+            <span class="fa fa-user"></span> Contact
+          </a>
+        </div>
+      </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"> Last Build </h3>
+      </div>
+      <div class="list-group">
+        <a href="/coprs/elegos/gitflow/build/1716177/" class="list-group-item">
+          <h4 class="list-group-item-heading">gitflow</h4>
+          <p class="list-group-item-text">
+            <small> Build: </small>
+            1716177
+          </p>
+          <p class="list-group-item-text">
+            <small> State: </small>
+            <span class="build-succeeded">
+              succeeded
+            </span>
+          </p>
+          <p class="list-group-item-text">
+            <small> Finished: </small>
+            3 years ago
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+
+<div class="panel-heading">
+  <h3 class="panel-title"> Quick Enable </h3>
+</div>
+<div class="panel-body">
+  <div class="well well-sm">
+    #&gt; dnf copr enable elegos/gitflow
+
+  </div>
+  <a href="https://docs.pagure.org/copr.copr/how_to_enable_repo.html#how-to-enable-repo" target="_blank">
+    <small><span class="pficon pficon-info"></span> More info about enabling Copr repositories</small></a>
+</div>    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"> Other Actions </h3>
+      </div>
+      <div class="panel-body">
+
+
+        <a href="/coprs/elegos/gitflow/report-abuse">
+          <small><span class="pficon pficon-warning-triangle-o"></span> Report Abuse </small>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+    <footer class="footer">
+      <div>
+        <div class="container text-muted">
+          <div class="">
+            <div class="row">
+             <div class="col-sm-3">
+                <dl>
+<dt><h3>Contact us</h3></dt>
+<dd>
+  <ul>
+    <li> <a href="https://matrix.to/#/#buildsys:fedoraproject.org">Fedora Build System on Matrix</a> </li>
+  </ul>
+</dd>                </dl>
+              </div>
+              <div class="col-sm-3">
+                <dl>
+<dt><h3>Copr Project</h3></dt>
+<dd>
+  <ul>
+    <li><a href="https://github.com/fedora-copr/copr">Project Homepage</a></li>
+    <li><a href="https://docs.pagure.org/copr.copr/user_documentation.html">User Documentation</a></li>
+    <li><a href="https://github.com/fedora-copr/copr/issues/new">Report a Bug</a></li>
+    <li><a href="https://github.com/fedora-copr/copr/issues">Known Issues</a></li>
+    <li><a href="https://docs.pagure.org/copr.copr/user_documentation.html#faq">FAQ</a></li>
+  </ul>
+</dd>                </dl>
+              </div>
+              <div class="col-sm-3">
+                <dl>
+                  <dt><h3>Site Navigation</h3></dt>
+                  <dd>
+                    <ul>
+                      <li> <a href="/coprs/">Home</a> </li>
+                      <li> <a href="/status/importing/">Task Queue</a> </li>
+                      <li> <a href="/api/">API</a> </li>
+                      <li> <a href="/user/info">GDPR</a> </li>
+                      <li> <a href="/rss/">RSS</a> </li>
+                      <li> <a href="/db_dumps/">Database Dump</a> </li>
+                      <li><a href="https://download.copr.fedorainfracloud.org/stats/index.html">Storage statistics</a> </li>
+                    </ul>
+                  </dd>
+                </dl>
+              </div>
+              <div class="col-sm-3">
+                <dl>
+                  <dt><h3>Powered by</h3></dt>
+                  <dd>
+                    <ul>
+                      <li><a href="https://www.python.org">Python</a></li>
+                      <li><a href="http://www.openstack.org">OpenStack</a></li>
+                      <li><a href="https://www.patternfly.org">PatternFly</a></li>
+                      <li><a href="https://github.com/release-engineering/dist-git">Dist Git</a></li>
+                    </ul>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <!-- <small class="text-muted">
+              Build 1.204-1.fc39
+              Build 1.125-1.git.16.4767b3b.fc25
+            </small> -->
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- FEDORA MENU -->
+  <script src="https://apps.fedoraproject.org/fedmenu//js/fedora-libravatar.js"></script>
+  <script src="https://apps.fedoraproject.org/fedmenu//js/fedmenu.js"></script>
+  <script>
+    fedmenu({
+        'url': 'https://apps.fedoraproject.org/js/data.js',
+        'mimeType': 'application/javascript',
+        'position': 'bottom-right',
+            'user': 'elegos',
+    });
+  </script>
+  <!-- Last post from our blog -->
+  <script src="/static/js/blog.js"></script>
+  <script>
+    $(document).ready(function(){
+      show_last_articles("https://fedora-copr.github.io/feed.xml", 2)
+      $(".show-me-javascript").removeClass("hidden");
+    });
+  </script>
+
+</body>
+</html>jü BTÑ      eê¦[eê¦bF¤©eê¦[   o    O^partitionKey=%28https%2Ccopr.fedorainfracloud.org%29,:https://copr.fedorainfracloud.org/coprs/elegos/gitflow/ necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Fri, 08 Mar 2024 05:47:07 GMT
+Server: Apache/2.4.58 (Fedora Linux) OpenSSL/3.1.1 mod_auth_gssapi/1.6.5 mod_wsgi/4.9.4 Python/3.12
+Strict-Transport-Security: max-age=31536000; preload
+Content-Length: 17495
+Content-Type: text/html; charset=utf-8
+ original-response-headers Date: Fri, 08 Mar 2024 05:47:07 GMT
+Server: Apache/2.4.58 (Fedora Linux) OpenSSL/3.1.1 mod_auth_gssapi/1.6.5 mod_wsgi/4.9.4 Python/3.12
+Strict-Transport-Security: max-age=31536000; preload
+Content-Length: 17495
+Set-Cookie: session=71e8b8ec-2913-4a73-8978-595bef70c6ff; Domain=.copr.fedorainfracloud.org; HttpOnly; Path=/
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html; charset=utf-8
+ ctid 1 uncompressed-len 0 net-response-time-onstart 482 net-response-time-onstop 644   DW
